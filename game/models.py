@@ -4,7 +4,7 @@ from django.template.defaultfilters import slugify
 
 class Charity(models.Model):
   title = models.CharField(max_length = 128, unique = True)
-  description = models.CharField(max_length = 512)
+  description = models.CharField(max_length = 1024)
   money_raised = models.IntegerField(default = 0)
   people_reached = models.IntegerField(default = 0)
   money_used = models.IntegerField(default = 0)
@@ -38,3 +38,6 @@ class Site(models.Model):
 
   def __unicode__(self):
     return self.name
+
+  class Meta:
+    verbose_name_plural = "people"
