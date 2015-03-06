@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if charities %}
+  <h1>Charities</h1>
+  <ul>
+  {% for charity in charities %}
+    <li><a href = "/game/charity/{{ charity.slug }}/">{{ charity.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+
+<head>
+<title>Giving What We Can Glasgow</title>
+<link href = "{% static 'styles/main.css' %}" rel="stylesheet">
+
+{% block head %}{% endblock %}
+
+</head>
+
+<body>
+<div class="banner"> 
+<img src = "{% static 'images/logo-fixed.jpg' %}"/>
+</div>
+<div class="menu">
+<ul>
+<li id="index"><a href = "{% url 'index' %}">Home</a></li>
+<li id="charities"><a href = "{% url 'charities' %}">Charities</a></li>
+<li id="about"><a href = "{% url 'about' %}">About</a></li>
+<li id="contact"><a href = "{% url 'contact' %}">Contact</a></li>
+</ul>
+</div>
+<div class="content">
+{% block body %}{% endblock %}
+</div>
+</body>
+
+</html>

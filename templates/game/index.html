@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+
+<style> 
+#countdown {
+  width: 250px;
+  height: 50px;
+  display: block;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 0, 0);
+} 
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/jquery.countdown.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'scripts/jquery.plugin.js' %}"></script>
+<script src="{% static 'scripts/jquery.countdown.js' %}"></script>
+
+<script>
+$(function () {
+  $('#countdown').countdown({until: new Date(2015, 15-1, 6)});
+});
+</script>
+
+{% endblock %}
+
+{% block body %}
+<p>
+Welcome to the Giving What We Can Glasgow Game page! yayaya
+somethingsomethingsomething
+yayaya
+</p>
+<p>Leading charity: <a href="/game/charity/{{leading_charity.slug}}/">{{leading_charity.title}}</a></p>
+<h2>Time left until end of game</h2>
+<div id="countdown"></div>
+{% endblock %}

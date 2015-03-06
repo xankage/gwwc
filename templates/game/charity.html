@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if charity %}
+<h1> {{ charity.title }} </h1>
+<p> {{ charity.description }} </p>
+<p> {{ charity.link }} </p>
+<p>
+People reached:  {{ charity.people_reached }}</p>
+<p>Money raised: {{ charity.money_raised }}
+</p>
+<p>
+Money used: {{ charity.money_used }}</p>
+<p>People used: {{ charity.people_used }}</p>
+<p>Time spent:  {{ charity.time_used }}
+</p>
+{% else %}
+<p>Charity does not exist</p>
+{% endif %}
+{% endblock %}

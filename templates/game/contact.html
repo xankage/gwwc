@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% if people %}
+<h1>People</h1>
+<ul>
+{% for person in people %}
+  <li>{{person.role}}: {{person.name}} <a href="mailto:{{person.email}}">{{person.email}}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if sites %}
+<h1>Sites</h1>
+<ul>
+{% for site in sites %}
+  <li>{{site.name}}: <a href={{site.url}}>{{site.url}}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,154 @@
+body  {
+  font-family: "Source Sans Pro",Arial,sans-serif; 
+}
+
+div  {
+  display: block;
+}
+
+h1  {
+  color: rgb(108, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  font-size: 2em;
+}
+
+h2  {
+  color: rgb(108, 0, 0);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+
+.banner  {
+  background-color: rgb(108,0,0);
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+}
+
+.banner img  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+}
+
+.menu {
+  overflow: none;
+}
+
+.menu ul  { 
+  list-style-type: none;
+  text-align: center;
+  background-color: rgb(108, 0, 0);
+  margin-top: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+  
+
+.menu li  {
+  display: inline-block;
+  margin-left: -5px;
+  margin-right: -5px; 
+}
+
+.menu a  {
+  display: block;
+  width: 150px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 0, 0);
+  padding: 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: .3s background-color;
+}
+
+.menu a:hover  {
+  color: rgb(108, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.menu ul li ul {
+  position: absolute;
+  left: auto;
+  margin-left: 5px;
+  margin-right: 0px;
+  width: 150px; 
+  padding: 0;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul li ul li { 
+  background-color: rgb(108, 0, 0) ; 
+  display: block; 
+  color: rgb(255, 255, 255);
+}
+
+
+#charities:hover ~ hr {
+  margin-left: 25%;
+}
+
+#about:hover ~ hr {
+  margin-left: 50%;
+}
+
+#contact:hover ~ hr {
+  margin-left: 75%;
+}
+
+hr {
+  height: 25px;
+  width: 25%;
+  margin: 0;
+  background: rgb(0, 0, 0);
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+.content  {
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-color: rgb(196, 196, 196);
+  margin-top: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  }
+
+.content ul  {
+  list-style-type: none;
+  margin-left: 15%;
+  margin-right: 15%;
+} 
+
+.content a  {
+  text-decoration: none;
+  color: rgb(108, 0, 0);
+}
+
+.content img  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content p  {
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: left;
+  color: rgb(0, 0, 0);
+}
+
