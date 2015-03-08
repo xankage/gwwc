@@ -6,7 +6,7 @@
 <h1>People</h1>
 <ul>
 {% for person in people %}
-  <li>{{person.role}}: {{person.name}} <a href="mailto:{{person.email}}">{{person.email}}</a></li>
+  <li>{{person.role}}: <a href="mailto:{{person.email}}">{{person.email}}</a></li>
 {% endfor %}
 </ul>
 {% endif %}

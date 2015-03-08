@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from game.models import Charity, Person, Site 
+from game.models import Charity, Event, Person, Site 
 
 def index(request):
   context_dict = {}
@@ -17,7 +17,9 @@ def charity(request, charity_name_slug):
   context_dict = {}
   try:
     charity = Charity.objects.get(slug = charity_name_slug)
+    events = Event.objects.filter(charity = charity)
     context_dict['charity'] = charity
+    context_dict['events'] = events
   except Charity.DoesNotExist:
     pass
   return render(request, 'game/charity.html', context_dict)

@@ -7,10 +7,11 @@
 <style> 
 #countdown {
   width: 250px;
-  height: 50px;
+  height: auto;
   display: block;
   padding-top: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 10px; 
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   color: rgb(255, 255, 255);
@@ -25,19 +26,14 @@
 
 <script>
 $(function () {
-  $('#countdown').countdown({until: new Date(2015, 15-1, 6)});
+  $('#countdown').countdown({until: new Date(2015, 3-1, 16), description: 'remaining until end of challenge'});
 });
 </script>
 
 {% endblock %}
 
 {% block body %}
-<p>
-Welcome to the Giving What We Can Glasgow Game page! yayaya
-somethingsomethingsomething
-yayaya
-</p>
-<p>Leading charity: <a href="/game/charity/{{leading_charity.slug}}/">{{leading_charity.title}}</a></p>
-<h2>Time left until end of game</h2>
+<h2>The first fundraising challenge from Giving What We Can Glasgow has begun!</h2> 
+<p>The charity currently in lead is <a href="/game/charity/{{leading_charity.slug}}/">{{leading_charity.title}}</a>. The challenge will end on March 15th (Sunday) at midnight.</p>
 <div id="countdown"></div>
 {% endblock %}

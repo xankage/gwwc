@@ -10,7 +10,7 @@ class Charity(models.Model):
   money_used = models.IntegerField(default = 0)
   people_used = models.IntegerField(default = 0)
   time_used = models.IntegerField(default = 0)
-  link = models.URLField(max_length = 128)
+  link = models.CharField(max_length = 128)
   score = models.IntegerField(default = 0)
   slug = models.SlugField(unique = True, blank = True)
 
@@ -24,6 +24,14 @@ class Charity(models.Model):
   class Meta:
     verbose_name_plural = "charities"
 
+class Event(models.Model):
+  title = models.CharField(max_length = 128)
+  link = models.CharField(max_length = 128)
+  charity = models.ForeignKey(Charity) 
+
+  def __unicode__(self):
+    return self.title
+
 class Person(models.Model):
   role = models.CharField(max_length = 128)
   name = models.CharField(max_length = 128)
@@ -32,12 +40,12 @@ class Person(models.Model):
   def __unicode__(self):
     return self.role
 
+  class Meta:
+    verbose_name_plural = "people"
+
 class Site(models.Model):
   name = models.CharField(max_length = 128)
   url = models.URLField(max_length = 128)
 
   def __unicode__(self):
     return self.name
-
-  class Meta:
-    verbose_name_plural = "people"
