@@ -8,7 +8,6 @@ class Charity(models.Model):
   money_raised = models.IntegerField(default = 0)
   people_reached = models.IntegerField(default = 0)
   money_used = models.IntegerField(default = 0)
-  people_used = models.IntegerField(default = 0)
   time_used = models.IntegerField(default = 0)
   link = models.CharField(max_length = 128)
   score = models.IntegerField(default = 0)
@@ -16,6 +15,7 @@ class Charity(models.Model):
 
   def save(self, *args, **kwargs):
     self.slug = slugify(self.title)
+    self.score = (self.money_raised + self.people_reached) / (self.money_used * self.time_used)
     super(Charity, self).save(*args, **kwargs)
 
   def __unicode__(self):
