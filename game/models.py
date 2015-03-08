@@ -15,7 +15,7 @@ class Charity(models.Model):
 
   def save(self, *args, **kwargs):
     self.slug = slugify(self.title)
-    self.score = (self.money_raised + self.people_reached) / (self.money_used * self.time_used)
+    self.score = (self.money_raised + self.people_reached) / (1 + self.money_used * self.time_used)
     super(Charity, self).save(*args, **kwargs)
 
   def __unicode__(self):
